@@ -6,6 +6,119 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import BeforeAfterGallery from "@/components/before-after-gallery"
+import { Hamburger } from "@/components/hamburger"
+import { HomeCompare } from "@/components/compare"
+
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Clean Strike - Profesjonalne czyszczenie kostki brukowej",
+  description: "Specjaliści w przywracaniu świeżości i estetyki kostce brukowej na prywatnych posesjach. Używamy najnowocześniejszych myjek ciśnieniowych i ekologicznych środków czyszczących.",
+  keywords: ["czyszczenie kostki brukowej", "mycie kostki brukowej", "Czeladź", "Będzin", "profesjonalne czyszczenie", "kostka brukowa"],
+  authors: [{ name: "Clean Strike" }],
+  creator: "Clean Strike",
+  publisher: "Clean Strike",
+  openGraph: {
+    type: "website",
+    locale: "pl_PL",
+    url: "https://cleanstrike.pl",
+    title: "Clean Strike - Profesjonalne czyszczenie kostki brukowej",
+    description: "Specjaliści w przywracaniu świeżości i estetyki kostce brukowej na prywatnych posesjach.",
+    siteName: "Clean Strike",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Clean Strike - Profesjonalne czyszczenie kostki brukowej",
+    description: "Specjaliści w przywracaniu świeżości i estetyki kostce brukowej na prywatnych posesjach.",
+    creator: "@cleanstrike",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+}
+
+const siteConfig = {
+  header: {
+    logoAlt: "Logo Clean Strike",
+    logoText: "Clean Strike",
+    navigation: {
+      home: "Strona główna",
+      about: "O nas",
+      portfolio: "Portfolio",
+      contact: "Kontakt",
+      freeQuoteButton: "Bezpłatna wycena",
+    },
+  },
+  hero: {
+    badge: "Profesjonalne usługi",
+    heading: "Profesjonalne czyszczenie kostki brukowej",
+    description: "Clean Strike to specjaliści w przywracaniu świeżości i estetyki kostce brukowej na prywatnych posesjach. Używamy najnowocześniejszych myjek ciśnieniowych i ekologicznych środków czyszczących.",
+    freeQuoteButton: "Bezpłatna wycena",
+    portfolioButton: "Zobacz nasze efekty",
+    heroImageAlt: "Czyszczenie kostki brukowej",
+  },
+  about: {
+    heading: "O Nas",
+    paragraph1: "Clean Strike to firma z wieloletnim doświadczeniem w profesjonalnym czyszczeniu kostki brukowej. Nasz zespół składa się z wykwalifikowanych specjalistów, którzy z pasją podchodzą do każdego zlecenia.",
+    paragraph2: "Oferujemy konkurencyjne ceny i gwarantujemy szybki czas realizacji zleceń. Naszym priorytetem jest zadowolenie klienta i osiągnięcie najlepszych możliwych efektów czyszczenia.",
+    paragraph3: "Korzystamy wyłącznie z profesjonalnego sprzętu i ekologicznych środków czyszczących, które są skuteczne, a jednocześnie bezpieczne dla środowiska.",
+    experience: {
+      heading: "Doświadczenie",
+      description: "Wieloletnie doświadczenie w branży czyszczenia powierzchni zewnętrznych.",
+    },
+    professionalism: {
+      heading: "Profesjonalizm",
+      description: "Wykwalifikowany zespół i nowoczesny sprzęt gwarantujący najwyższą jakość usług.",
+    },
+    satisfaction: {
+      heading: "Satysfakcja",
+      description: "Setki zadowolonych klientów i imponujące efekty naszej pracy.",
+    },
+  },
+  portfolio: {
+    heading: "Nasze Portfolio",
+    description: "Zobacz imponujące efekty naszej pracy. Zdjęcia \"przed i po\" najlepiej pokazują skuteczność naszych usług.",
+  },
+  contact: {
+    heading: "Skontaktuj się z nami",
+    description: "Skorzystaj z formularza kontaktowego lub zadzwoń do nas, aby uzyskać bezpłatną wycenę.",
+    phone: "+48 123 456 789",
+    email: "kontakt@cleanstrike.pl",
+    address: "Czeladź, Będzin i okolice",
+    workingHours: {
+      heading: "Godziny pracy",
+      mondayFriday: "Poniedziałek - Piątek",
+      mondayFridayHours: "8:00 - 18:00",
+      saturday: "Sobota",
+      saturdayHours: "9:00 - 15:00",
+      sunday: "Niedziela",
+      sundayHours: "Zamknięte",
+    },
+    form: {
+      nameLabel: "Imię i nazwisko",
+      namePlaceholder: "Jan Kowalski",
+      emailLabel: "Email",
+      emailPlaceholder: "jan@example.com",
+      phoneLabel: "Telefon",
+      phonePlaceholder: "+48 123 456 789",
+      messageLabel: "Wiadomość",
+      messagePlaceholder: "Opisz swoje potrzeby...",
+      submitButton: "Wyślij wiadomość",
+    },
+  },
+  footer: {
+    logoAlt: "Logo Clean Strike",
+    logoText: "Clean Strike",
+    description: "Profesjonalne czyszczenie kostki brukowej na prywatnych posesjach.",
+    navigationHeading: "Nawigacja",
+    contactHeading: "Kontakt",
+    socialMediaHeading: "Social Media",
+    copyright: `© ${new Date().getFullYear()} Clean Strike. Wszelkie prawa zastrzeżone.`,
+    facebookAlt: "Facebook",
+    instagramAlt: "Instagram",
+  },
+};
 
 export default function Home() {
   return (
@@ -17,44 +130,26 @@ export default function Home() {
             <div className="flex h-10 w-10 items-center justify-center rounded bg-primary/20">
               <Droplets className="h-6 w-6 text-primary" />
             </div>
-            <span className="text-xl font-bold text-primary">Clean Strike</span>
+            <span className="text-xl font-bold text-primary">{siteConfig.header.logoText}</span>
           </div>
           <nav className="hidden md:flex gap-6">
             <Link href="#home" className="text-sm font-medium hover:text-primary">
-              Strona główna
+              {siteConfig.header.navigation.home}
             </Link>
             <Link href="#about" className="text-sm font-medium hover:text-primary">
-              O nas
+              {siteConfig.header.navigation.about}
             </Link>
             <Link href="#portfolio" className="text-sm font-medium hover:text-primary">
-              Portfolio
+              {siteConfig.header.navigation.portfolio}
             </Link>
             <Link href="#contact" className="text-sm font-medium hover:text-primary">
-              Kontakt
+              {siteConfig.header.navigation.contact}
             </Link>
           </nav>
           <Button asChild size="sm" className="hidden md:inline-flex bg-destructive hover:bg-destructive/90">
-            <Link href="#contact">Bezpłatna wycena</Link>
+            <Link href="#contact">{siteConfig.header.navigation.freeQuoteButton}</Link>
           </Button>
-          <Button variant="outline" size="icon" className="md:hidden">
-            <span className="sr-only">Otwórz menu</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="h-5 w-5"
-            >
-              <line x1="4" x2="20" y1="12" y2="12" />
-              <line x1="4" x2="20" y1="6" y2="6" />
-              <line x1="4" x2="20" y1="18" y2="18" />
-            </svg>
-          </Button>
+          <Hamburger />
         </div>
       </header>
 
@@ -70,26 +165,25 @@ export default function Home() {
           </div>
           <div className="container relative z-10 grid gap-8 md:grid-cols-2 md:items-center">
             <div className="flex flex-col gap-4">
-              <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-sm text-primary">
+              <div className="w-max inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-sm text-primary">
                 <Zap className="h-4 w-4" />
-                <span>Profesjonalne usługi</span>
+                <span>{siteConfig.hero.badge}</span>
               </div>
               <h1 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
-                Profesjonalne czyszczenie kostki brukowej
+                {siteConfig.hero.heading}
               </h1>
               <p className="text-lg text-muted-foreground md:text-xl">
-                Clean Strike to specjaliści w przywracaniu świeżości i estetyki kostce brukowej na prywatnych posesjach.
-                Używamy najnowocześniejszych myjek ciśnieniowych i ekologicznych środków czyszczących.
+                {siteConfig.hero.description}
               </p>
               <div className="flex flex-col gap-3 sm:flex-row">
                 <Button asChild size="lg" className="bg-destructive hover:bg-destructive/90">
                   <Link href="#contact">
-                    Bezpłatna wycena
+                    {siteConfig.hero.freeQuoteButton}
                     <ChevronRight className="ml-1 h-4 w-4" />
                   </Link>
                 </Button>
                 <Button asChild variant="outline" size="lg" className="border-primary/50 hover:bg-primary/10">
-                  <Link href="#portfolio">Zobacz nasze efekty</Link>
+                  <Link href="#portfolio">{siteConfig.hero.portfolioButton}</Link>
                 </Button>
               </div>
             </div>
@@ -97,7 +191,7 @@ export default function Home() {
               <div className="absolute inset-0 z-10 bg-gradient-to-t from-background/80 via-transparent to-transparent"></div>
               <Image
                 src="/placeholder.svg?height=500&width=600"
-                alt="Czyszczenie kostki brukowej"
+                alt={siteConfig.hero.heroImageAlt}
                 fill
                 className="object-cover"
                 priority
@@ -111,25 +205,22 @@ export default function Home() {
           <div className="container">
             <div className="mx-auto max-w-3xl text-center">
               <h2 className="text-3xl font-bold tracking-tight md:text-4xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
-                O Nas
+                {siteConfig.about.heading}
               </h2>
               <div className="mt-8 space-y-4 text-lg">
                 <p>
-                  Clean Strike to firma z wieloletnim doświadczeniem w profesjonalnym czyszczeniu kostki brukowej. Nasz
-                  zespół składa się z wykwalifikowanych specjalistów, którzy z pasją podchodzą do każdego zlecenia.
+                  {siteConfig.about.paragraph1}
                 </p>
                 <p>
-                  Oferujemy konkurencyjne ceny i gwarantujemy szybki czas realizacji zleceń. Naszym priorytetem jest
-                  zadowolenie klienta i osiągnięcie najlepszych możliwych efektów czyszczenia.
+                  {siteConfig.about.paragraph2}
                 </p>
                 <p>
-                  Korzystamy wyłącznie z profesjonalnego sprzętu i ekologicznych środków czyszczących, które są
-                  skuteczne, a jednocześnie bezpieczne dla środowiska.
+                  {siteConfig.about.paragraph3}
                 </p>
               </div>
               <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-3">
                 <div className="rounded-lg border border-border/50 bg-card/50 p-6 text-card-foreground backdrop-blur-sm">
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/20">
+                  <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/20">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -158,13 +249,13 @@ export default function Home() {
                       <path d="m7 20.66 1-1.73" />
                     </svg>
                   </div>
-                  <h3 className="text-xl font-bold text-primary">Doświadczenie</h3>
+                  <h3 className="text-xl font-bold text-primary">{siteConfig.about.experience.heading}</h3>
                   <p className="mt-2 text-muted-foreground">
-                    Wieloletnie doświadczenie w branży czyszczenia powierzchni zewnętrznych.
+                    {siteConfig.about.experience.description}
                   </p>
                 </div>
                 <div className="rounded-lg border border-border/50 bg-card/50 p-6 text-card-foreground backdrop-blur-sm">
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/20">
+                  <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/20">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -185,13 +276,13 @@ export default function Home() {
                       <path d="M8 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" />
                     </svg>
                   </div>
-                  <h3 className="text-xl font-bold text-primary">Profesjonalizm</h3>
+                  <h3 className="text-xl font-bold text-primary">{siteConfig.about.professionalism.heading}</h3>
                   <p className="mt-2 text-muted-foreground">
-                    Wykwalifikowany zespół i nowoczesny sprzęt gwarantujący najwyższą jakość usług.
+                    {siteConfig.about.professionalism.description}
                   </p>
                 </div>
                 <div className="rounded-lg border border-border/50 bg-card/50 p-6 text-card-foreground backdrop-blur-sm">
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/20">
+                  <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/20">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -207,9 +298,9 @@ export default function Home() {
                       <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
                     </svg>
                   </div>
-                  <h3 className="text-xl font-bold text-primary">Satysfakcja</h3>
+                  <h3 className="text-xl font-bold text-primary">{siteConfig.about.satisfaction.heading}</h3>
                   <p className="mt-2 text-muted-foreground">
-                    Setki zadowolonych klientów i imponujące efekty naszej pracy.
+                    {siteConfig.about.satisfaction.description}
                   </p>
                 </div>
               </div>
@@ -222,17 +313,20 @@ export default function Home() {
           <div className="container">
             <div className="mx-auto max-w-3xl text-center">
               <h2 className="text-3xl font-bold tracking-tight md:text-4xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
-                Nasze Portfolio
+                {siteConfig.portfolio.heading}
               </h2>
               <p className="mt-4 text-lg text-muted-foreground">
-                Zobacz imponujące efekty naszej pracy. Zdjęcia "przed i po" najlepiej pokazują skuteczność naszych
-                usług.
+                {siteConfig.portfolio.description}
               </p>
             </div>
             <div className="mt-12">
               <BeforeAfterGallery />
             </div>
           </div>
+        </section>
+
+        <section id="compare">
+          <HomeCompare />
         </section>
 
         {/* Kontakt Section */}
@@ -244,10 +338,10 @@ export default function Home() {
           <div className="container relative z-10">
             <div className="mx-auto max-w-3xl text-center">
               <h2 className="text-3xl font-bold tracking-tight md:text-4xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
-                Skontaktuj się z nami
+                {siteConfig.contact.heading}
               </h2>
               <p className="mt-4 text-lg text-muted-foreground">
-                Skorzystaj z formularza kontaktowego lub zadzwoń do nas, aby uzyskać bezpłatną wycenę.
+                {siteConfig.contact.description}
               </p>
             </div>
             <div className="mt-12 grid gap-8 md:grid-cols-2">
@@ -256,34 +350,34 @@ export default function Home() {
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/20">
                     <Phone className="h-5 w-5 text-primary" />
                   </div>
-                  <span className="text-lg">+48 123 456 789</span>
+                  <span className="text-lg">{siteConfig.contact.phone}</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/20">
                     <Mail className="h-5 w-5 text-primary" />
                   </div>
-                  <span className="text-lg">kontakt@cleanstrike.pl</span>
+                  <span className="text-lg">{siteConfig.contact.email}</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/20">
                     <MapPin className="h-5 w-5 text-primary" />
                   </div>
-                  <span className="text-lg">Warszawa i okolice</span>
+                  <span className="text-lg">{siteConfig.contact.address}</span>
                 </div>
                 <div className="mt-8 rounded-lg border border-border/50 bg-card/50 p-6 backdrop-blur-sm">
-                  <h3 className="text-xl font-bold text-primary">Godziny pracy</h3>
+                  <h3 className="text-xl font-bold text-primary">{siteConfig.contact.workingHours.heading}</h3>
                   <div className="mt-4 space-y-2">
                     <div className="flex justify-between">
-                      <span>Poniedziałek - Piątek</span>
-                      <span>8:00 - 18:00</span>
+                      <span>{siteConfig.contact.workingHours.mondayFriday}</span>
+                      <span>{siteConfig.contact.workingHours.mondayFridayHours}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span>Sobota</span>
-                      <span>9:00 - 15:00</span>
+                      <span>{siteConfig.contact.workingHours.saturday}</span>
+                      <span>{siteConfig.contact.workingHours.saturdayHours}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span>Niedziela</span>
-                      <span>Zamknięte</span>
+                      <span>{siteConfig.contact.workingHours.sunday}</span>
+                      <span>{siteConfig.contact.workingHours.sundayHours}</span>
                     </div>
                   </div>
                 </div>
@@ -296,21 +390,21 @@ export default function Home() {
                         htmlFor="name"
                         className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                       >
-                        Imię i nazwisko
+                        {siteConfig.contact.form.nameLabel}
                       </label>
-                      <Input id="name" placeholder="Jan Kowalski" className="border-border/50 bg-background/50" />
+                      <Input id="name" placeholder={siteConfig.contact.form.namePlaceholder} className="border-border/50 bg-background/50" />
                     </div>
                     <div className="space-y-2">
                       <label
                         htmlFor="email"
                         className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                       >
-                        Email
+                        {siteConfig.contact.form.emailLabel}
                       </label>
                       <Input
                         id="email"
                         type="email"
-                        placeholder="jan@example.com"
+                        placeholder={siteConfig.contact.form.emailPlaceholder}
                         className="border-border/50 bg-background/50"
                       />
                     </div>
@@ -320,25 +414,25 @@ export default function Home() {
                       htmlFor="phone"
                       className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                     >
-                      Telefon
+                      {siteConfig.contact.form.phoneLabel}
                     </label>
-                    <Input id="phone" placeholder="+48 123 456 789" className="border-border/50 bg-background/50" />
+                    <Input id="phone" placeholder={siteConfig.contact.form.phonePlaceholder} className="border-border/50 bg-background/50" />
                   </div>
                   <div className="space-y-2">
                     <label
                       htmlFor="message"
                       className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                     >
-                      Wiadomość
+                      {siteConfig.contact.form.messageLabel}
                     </label>
                     <Textarea
                       id="message"
-                      placeholder="Opisz swoje potrzeby..."
+                      placeholder={siteConfig.contact.form.messagePlaceholder}
                       className="min-h-[120px] border-border/50 bg-background/50"
                     />
                   </div>
                   <Button type="submit" className="w-full bg-destructive hover:bg-destructive/90">
-                    Wyślij wiadomość
+                    {siteConfig.contact.form.submitButton}
                   </Button>
                 </form>
               </div>
@@ -356,39 +450,39 @@ export default function Home() {
                 <div className="flex h-10 w-10 items-center justify-center rounded bg-primary/20">
                   <Droplets className="h-6 w-6 text-primary" />
                 </div>
-                <span className="text-xl font-bold text-primary">Clean Strike</span>
+                <span className="text-xl font-bold text-primary">{siteConfig.footer.logoText}</span>
               </div>
               <p className="text-sm text-muted-foreground">
-                Profesjonalne czyszczenie kostki brukowej na prywatnych posesjach.
+                {siteConfig.footer.description}
               </p>
             </div>
             <div>
-              <h3 className="mb-4 text-sm font-semibold uppercase text-primary">Nawigacja</h3>
+              <h3 className="mb-4 text-sm font-semibold uppercase text-primary">{siteConfig.footer.navigationHeading}</h3>
               <nav className="flex flex-col gap-2">
                 <Link href="#home" className="text-sm text-muted-foreground hover:text-primary">
-                  Strona główna
+                  {siteConfig.header.navigation.home}
                 </Link>
                 <Link href="#about" className="text-sm text-muted-foreground hover:text-primary">
-                  O nas
+                  {siteConfig.header.navigation.about}
                 </Link>
                 <Link href="#portfolio" className="text-sm text-muted-foreground hover:text-primary">
-                  Portfolio
+                  {siteConfig.header.navigation.portfolio}
                 </Link>
                 <Link href="#contact" className="text-sm text-muted-foreground hover:text-primary">
-                  Kontakt
+                  {siteConfig.header.navigation.contact}
                 </Link>
               </nav>
             </div>
             <div>
-              <h3 className="mb-4 text-sm font-semibold uppercase text-primary">Kontakt</h3>
+              <h3 className="mb-4 text-sm font-semibold uppercase text-primary">{siteConfig.footer.contactHeading}</h3>
               <div className="space-y-2 text-sm text-muted-foreground">
-                <p>+48 123 456 789</p>
-                <p>kontakt@cleanstrike.pl</p>
-                <p>Warszawa i okolice</p>
+                <p>{siteConfig.contact.phone}</p>
+                <p>{siteConfig.contact.email}</p>
+                <p>{siteConfig.contact.address}</p>
               </div>
             </div>
             <div>
-              <h3 className="mb-4 text-sm font-semibold uppercase text-primary">Social Media</h3>
+              <h3 className="mb-4 text-sm font-semibold uppercase text-primary">{siteConfig.footer.socialMediaHeading}</h3>
               <div className="flex gap-4">
                 <Link
                   href="#"
@@ -408,7 +502,7 @@ export default function Home() {
                   >
                     <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
                   </svg>
-                  <span className="sr-only">Facebook</span>
+                  <span className="sr-only">{siteConfig.footer.facebookAlt}</span>
                 </Link>
                 <Link
                   href="#"
@@ -430,13 +524,13 @@ export default function Home() {
                     <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
                     <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
                   </svg>
-                  <span className="sr-only">Instagram</span>
+                  <span className="sr-only">{siteConfig.footer.instagramAlt}</span>
                 </Link>
               </div>
             </div>
           </div>
           <div className="mt-8 border-t border-border/40 pt-8 text-center text-sm text-muted-foreground">
-            <p>&copy; {new Date().getFullYear()} Clean Strike. Wszelkie prawa zastrzeżone.</p>
+            <p>{siteConfig.footer.copyright}</p>
           </div>
         </div>
       </footer>
