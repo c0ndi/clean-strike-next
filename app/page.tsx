@@ -3,13 +3,12 @@ import Link from "next/link"
 import { ChevronRight, Mail, MapPin, Phone, Droplets, Zap } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
 import BeforeAfterGallery from "@/components/before-after-gallery"
 import { Hamburger } from "@/components/hamburger"
-import { HomeCompare } from "@/components/compare"
 
 import { Metadata } from "next"
+import PageLoader from "@/components/page-loader"
+import { BeforeAfterHeroAnimation } from "@/components/before-after-hero-animation"
 
 export const metadata: Metadata = {
   title: "Clean Strike - Profesjonalne czyszczenie kostki brukowej",
@@ -123,6 +122,7 @@ const siteConfig = {
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
+      <PageLoader />
       {/* Nagłówek */}
       <header className="sticky top-0 z-40 border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-16 items-center justify-between">
@@ -189,19 +189,31 @@ export default function Home() {
             </div>
             <div className="relative h-[300px] w-full overflow-hidden rounded-lg border border-border/50 md:h-[400px] lg:h-[500px]">
               <div className="absolute inset-0 z-10 bg-gradient-to-t from-background/80 via-transparent to-transparent"></div>
-              <Image
-                src="/placeholder.svg?height=500&width=600"
-                alt={siteConfig.hero.heroImageAlt}
-                fill
-                className="object-cover"
-                priority
-              />
+
+              <BeforeAfterHeroAnimation />
+            </div>
+          </div>
+        </section>
+
+        {/* Portfolio Section */}
+        <section id="portfolio" className="py-16 md:py-24">
+          <div className="container">
+            <div className="mx-auto max-w-3xl text-center">
+              <h2 className="text-3xl font-bold tracking-tight md:text-4xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
+                {siteConfig.portfolio.heading}
+              </h2>
+              <p className="mt-4 text-lg text-muted-foreground">
+                {siteConfig.portfolio.description}
+              </p>
+            </div>
+            <div className="mt-12">
+              <BeforeAfterGallery />
             </div>
           </div>
         </section>
 
         {/* O Nas Section */}
-        <section id="about" className="py-16 md:py-24">
+        <section id="about" className="py-16 md:py-24 bg-muted">
           <div className="container">
             <div className="mx-auto max-w-3xl text-center">
               <h2 className="text-3xl font-bold tracking-tight md:text-4xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
@@ -308,27 +320,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Portfolio Section */}
-        <section id="portfolio" className="bg-muted py-16 md:py-24">
-          <div className="container">
-            <div className="mx-auto max-w-3xl text-center">
-              <h2 className="text-3xl font-bold tracking-tight md:text-4xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
-                {siteConfig.portfolio.heading}
-              </h2>
-              <p className="mt-4 text-lg text-muted-foreground">
-                {siteConfig.portfolio.description}
-              </p>
-            </div>
-            <div className="mt-12">
-              <BeforeAfterGallery />
-            </div>
-          </div>
-        </section>
-
-        <section id="compare">
-          <HomeCompare />
-        </section>
-
         {/* Kontakt Section */}
         <section id="contact" className="py-16 md:py-24 relative">
           <div className="absolute inset-0 z-0 opacity-10">
@@ -344,8 +335,8 @@ export default function Home() {
                 {siteConfig.contact.description}
               </p>
             </div>
-            <div className="mt-12 grid gap-8 md:grid-cols-2">
-              <div className="space-y-6">
+            <div className="mt-12 grid gap-8 md:grid-cols-5 items-center">
+              <div className="space-y-6 md:col-span-2">
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/20">
                     <Phone className="h-5 w-5 text-primary" />
@@ -382,59 +373,13 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="rounded-lg border border-border/50 bg-card/50 p-6 text-card-foreground backdrop-blur-sm">
-                <form className="space-y-4">
-                  <div className="grid gap-4 sm:grid-cols-2">
-                    <div className="space-y-2">
-                      <label
-                        htmlFor="name"
-                        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                      >
-                        {siteConfig.contact.form.nameLabel}
-                      </label>
-                      <Input id="name" placeholder={siteConfig.contact.form.namePlaceholder} className="border-border/50 bg-background/50" />
-                    </div>
-                    <div className="space-y-2">
-                      <label
-                        htmlFor="email"
-                        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                      >
-                        {siteConfig.contact.form.emailLabel}
-                      </label>
-                      <Input
-                        id="email"
-                        type="email"
-                        placeholder={siteConfig.contact.form.emailPlaceholder}
-                        className="border-border/50 bg-background/50"
-                      />
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <label
-                      htmlFor="phone"
-                      className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                    >
-                      {siteConfig.contact.form.phoneLabel}
-                    </label>
-                    <Input id="phone" placeholder={siteConfig.contact.form.phonePlaceholder} className="border-border/50 bg-background/50" />
-                  </div>
-                  <div className="space-y-2">
-                    <label
-                      htmlFor="message"
-                      className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                    >
-                      {siteConfig.contact.form.messageLabel}
-                    </label>
-                    <Textarea
-                      id="message"
-                      placeholder={siteConfig.contact.form.messagePlaceholder}
-                      className="min-h-[120px] border-border/50 bg-background/50"
-                    />
-                  </div>
-                  <Button type="submit" className="w-full bg-destructive hover:bg-destructive/90">
-                    {siteConfig.contact.form.submitButton}
-                  </Button>
-                </form>
+              <div className="md:col-span-3 rounded-lg overflow-hidden text-card-foreground backdrop-blur-sm aspect-video">
+                <Image
+                  src="/images/contact-section.webp"
+                  alt="Contact Section"
+                  fill
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>

@@ -5,8 +5,8 @@ import React from "react";
 
 import ReactBeforeSliderComponent from 'react-before-after-slider-component';
 import 'react-before-after-slider-component/dist/build.css';
-const ReactCompareImage = dynamic(() => import("react-compare-image"), { ssr: false });
-// const ReactBeforeSliderComponent = dynamic(() => import('react-before-after-slider-component'), { ssr: false });
+import { Button } from "./ui/button";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 interface CompareProps {
   before: string;
@@ -16,7 +16,6 @@ interface CompareProps {
   className?: string;
   sliderPositionPercentage?: number;
   hoverSlider?: boolean;
-  // Dodaj inne propsy z react-compare-image, które uznasz za potrzebne
 }
 
 const Compare: React.FC<CompareProps> = ({
@@ -30,69 +29,32 @@ const Compare: React.FC<CompareProps> = ({
   ...rest
 }) => {
   return (
-    <div className={className}>
-      <ReactCompareImage
-        leftImage={before}
-        rightImage={after}
-        leftImageAlt={altBefore}
-        rightImageAlt={altAfter}
-        sliderPositionPercentage={sliderPositionPercentage}
-        {...rest}
-      />
-    </div>
-  );
-};
+    <div className="relative w-full h-full">
+      <div className="absolute inset-0 w-full h-full z-10 pointer-events-none">
+        <Button variant={"default"} className="bg-gray-800 absolute left-3 my-auto inset-y-0 !opacity-80" disabled>
+          <ArrowLeft />
+          Przed
+        </Button>
 
-const Compare2: React.FC<CompareProps> = ({
-  before,
-  after,
-  altBefore = "Zdjęcie przed czyszczeniem",
-  altAfter = "Zdjęcie po czyszczeniu",
-  className,
-  sliderPositionPercentage,
-  hoverSlider,
-  ...rest
-}) => {
-  return (
-    <ReactBeforeSliderComponent
-      firstImage={{
-        imageUrl: before,
-        alt: altBefore,
-      }}
-      secondImage={{
-        imageUrl: after,
-        alt: altAfter,
-      }}
-    />
-  )
-}
-
-export function HomeCompare() {
-  return (
-    <div className="h-[300px] container my-32 grid grid-cols-1 gap-4 md:grid-cols-3">
-      <Compare
-        before="/images/before1.png"
-        after="/images/after1.png"
-        altBefore="Kostka przed 1"
-        altAfter="Kostka po 1"
-        className="rounded-lg overflow-hidden border border-border/50"
-      />
-      <Compare2
-        before="/images/before1.png"
-        after="/images/after1.png"
-        altBefore="Kostka przed 2"
-        altAfter="Kostka po 2"
-        className="rounded-lg overflow-hidden border border-border/50"
-      />
-      <Compare
-        before="/images/before3.jpg"
-        after="/images/after3.jpg"
-        altBefore="Kostka przed 3"
-        altAfter="Kostka po 3"
-        className="rounded-lg overflow-hidden border border-border/50"
+        <Button variant={"default"} className="bg-gray-800 absolute right-3 my-auto inset-y-0 !opacity-80" disabled>
+          <ArrowRight />
+          Po
+        </Button>
+      </div>
+      <ReactBeforeSliderComponent
+        className={className}
+        firstImage={{
+          imageUrl: after,
+          alt: altAfter,
+        }}
+        secondImage={{
+          imageUrl: before,
+          alt: altBefore,
+        }}
       />
     </div>
   )
 }
 
-export default Compare;
+
+export { Compare };
