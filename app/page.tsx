@@ -84,7 +84,7 @@ const siteConfig = {
     description: "Skorzystaj z formularza kontaktowego lub zadzwoń do nas, aby uzyskać bezpłatną wycenę.",
     phone: "+48 123 456 789",
     email: "kontakt@cleanstrike.pl",
-    address: "Czeladź, Będzin i okolice",
+    address: "Działamy na terenie całego Śląska",
     workingHours: {
       heading: "Godziny pracy",
       mondayFriday: "Poniedziałek - Piątek",
