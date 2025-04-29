@@ -54,16 +54,16 @@ export default function BeforeAfterGallery() {
     <div className="flex flex-col gap-4">
       <div className="grid grid-cols-1 md:grid-cols-2">
         {beforeAndAfterHorizontalData.map((item) => (
-          <div key={item.id} className="aspect-[9 / 16]">
-            <div className="p-1">
-              <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
+          <div key={item.id} className="aspect-[9 / 16] h-full">
+            <div className="p-1 h-full">
+              <Card className="border-border/50 bg-card/50 backdrop-blur-sm h-full">
                 <CardContent className="flex flex-col p-6">
                   <Compare
                     before={item.beforeImage}
                     after={item.afterImage}
                     altBefore={`Przed - ${item.title}`}
                     altAfter={`Po - ${item.title}`}
-                    className="rounded-lg border border-border/50 overflow-hidden"
+                    className="rounded-lg border border-border/50 overflow-hidden h-[300px] md:h-[400px]"
                   />
                   <div className="mt-4">
                     <h3 className="text-lg font-bold text-primary">{item.title}</h3>
