@@ -20,6 +20,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "pl_PL",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
     url: "https://cleanstrike.pl",
     title: "Clean Strike - Profesjonalne czyszczenie kostki brukowej",
     description: "Specjaliści w przywracaniu świeżości i estetyki kostce brukowej na prywatnych posesjach.",
