@@ -13,7 +13,7 @@ import { BeforeAfterHeroAnimation } from "@/components/before-after-hero-animati
 export const metadata: Metadata = {
   title: "Clean Strike - Profesjonalne czyszczenie kostki brukowej",
   description: "Specjaliści w przywracaniu świeżości i estetyki kostce brukowej na prywatnych posesjach. Używamy najnowocześniejszych myjek ciśnieniowych i ekologicznych środków czyszczących.",
-  keywords: ["czyszczenie kostki brukowej", "mycie kostki brukowej", "Czeladź", "Będzin", "profesjonalne czyszczenie", "kostka brukowa"],
+  keywords: ["czyszczenie kostki brukowej", "mycie kostki brukowej", "Czeladź", "Będzin", "Śląsk", "profesjonalne czyszczenie", "kostka brukowa", "elewacje", "podjazdy"],
   authors: [{ name: "Clean Strike" }],
   creator: "Clean Strike",
   publisher: "Clean Strike",
