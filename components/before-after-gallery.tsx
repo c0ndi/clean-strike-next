@@ -7,15 +7,15 @@ import { Compare } from "./compare"
 const beforeAndAfterHorizontalData = [
   {
     id: 1,
-    title: "Podjazd do garażu",
-    description: "Czyszczenie podjazdu z kostki brukowej",
+    title: "Ogrodziany chodnik",
+    description: "Czyszczenie ogrodzianych chodników z kostki brukowej",
     beforeImage: "/images/compare-horizontal/before1.webp",
     afterImage: "/images/compare-horizontal/after1.webp",
   },
   {
     id: 2,
-    title: "Podjazd do garażu",
-    description: "Czyszczenie podjazdu z kostki brukowej",
+    title: "Ogrodziany chodnik",
+    description: "Czyszczenie ogrodzianych chodników z kostki brukowej",
     beforeImage: "/images/compare-horizontal/before2.webp",
     afterImage: "/images/compare-horizontal/after2.webp",
   },
@@ -23,15 +23,15 @@ const beforeAndAfterHorizontalData = [
 const beforeAfterData = [
   {
     id: 1,
-    title: "Podjazd do garażu",
-    description: "Czyszczenie podjazdu z kostki brukowej",
+    title: "Ścieżka ogrodowa",
+    description: "Czyszczenie ścieżki w ogrodzie",
     beforeImage: "/images/compare/before1.webp",
     afterImage: "/images/compare/after1.webp",
   },
   {
     id: 5,
-    title: "Ścieżka ogrodowa",
-    description: "Czyszczenie ścieżki w ogrodzie",
+    title: "Krawężniki oraz ścieżka ogrodowa",
+    description: "Czyszczenie krawężnika oraz ścieżki w ogrodzie",
     beforeImage: "/images/compare/before5.webp",
     afterImage: "/images/compare/after5.webp",
   },

@@ -10,7 +10,6 @@ import { Metadata } from "next"
 import PageLoader from "@/components/page-loader"
 import { BeforeAfterHeroAnimation } from "@/components/before-after-hero-animation"
 import { ButtonFixed } from "@/components/button-fixed"
-import { BeforeAfterHeroAnimationCopy } from "@/components/before-after-hero-animation copy"
 
 export const metadata: Metadata = {
   title: "Clean Strike - Profesjonalne czyszczenie kostki brukowej",
@@ -107,7 +106,7 @@ const siteConfig = {
   footer: {
     logoAlt: "Logo Clean Strike",
     logoText: "Clean Strike",
-    description: "Profesjonalne czyszczenie kostki brukowej na prywatnych posesjach.",
+    description: "Profesjonalne czyszczenie kostki brukowej na posesjach.",
     navigationHeading: "Nawigacja",
     contactHeading: "Kontakt",
     socialMediaHeading: "Social Media",
