@@ -9,6 +9,7 @@ import { Hamburger } from "@/components/hamburger"
 import { Metadata } from "next"
 import PageLoader from "@/components/page-loader"
 import { BeforeAfterHeroAnimation } from "@/components/before-after-hero-animation"
+import { ButtonFixed } from "@/components/button-fixed"
 
 export const metadata: Metadata = {
   title: "Clean Strike - Profesjonalne czyszczenie kostki brukowej",
@@ -89,8 +90,8 @@ const siteConfig = {
   contact: {
     heading: "Skontaktuj się z nami",
     description: "Skorzystaj z formularza kontaktowego lub zadzwoń do nas, aby uzyskać bezpłatną wycenę.",
-    phone: "+48 123 456 789",
-    email: "kontakt@cleanstrike.pl",
+    phone: "+48 660 753 189",
+    email: "myciekostkiczeladz@gmail.com",
     address: "Działamy na terenie całego Śląska",
     workingHours: {
       heading: "Godziny pracy",
@@ -101,17 +102,6 @@ const siteConfig = {
       sunday: "Niedziela",
       sundayHours: "Zamknięte",
     },
-    form: {
-      nameLabel: "Imię i nazwisko",
-      namePlaceholder: "Jan Kowalski",
-      emailLabel: "Email",
-      emailPlaceholder: "jan@example.com",
-      phoneLabel: "Telefon",
-      phonePlaceholder: "+48 123 456 789",
-      messageLabel: "Wiadomość",
-      messagePlaceholder: "Opisz swoje potrzeby...",
-      submitButton: "Wyślij wiadomość",
-    },
   },
   footer: {
     logoAlt: "Logo Clean Strike",
@@ -120,7 +110,7 @@ const siteConfig = {
     navigationHeading: "Nawigacja",
     contactHeading: "Kontakt",
     socialMediaHeading: "Social Media",
-    copyright: `© ${new Date().getFullYear()} Clean Strike. Wszelkie prawa zastrzeżone.`,
+    copyright: `Podoba ci się strona? Zadzwoń +48 572 526 380`,
     facebookAlt: "Facebook",
     instagramAlt: "Instagram",
   },
@@ -130,6 +120,7 @@ export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
       <PageLoader />
+      <ButtonFixed />
       {/* Nagłówek */}
       <header className="sticky top-0 z-40 border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-16 items-center justify-between">
@@ -424,8 +415,12 @@ export default function Home() {
             <div>
               <h3 className="mb-4 text-sm font-semibold uppercase text-primary">{siteConfig.footer.contactHeading}</h3>
               <div className="space-y-2 text-sm text-muted-foreground">
-                <p>{siteConfig.contact.phone}</p>
-                <p>{siteConfig.contact.email}</p>
+                <a href="tel:+48660753189" className="underline">
+                  <p>{siteConfig.contact.phone}</p>
+                </a>
+                <a href="mailto:myciekostkiczeladz@gmail.com" className="underline">
+                  <p>{siteConfig.contact.email}</p>
+                </a>
                 <p>{siteConfig.contact.address}</p>
               </div>
             </div>
@@ -477,9 +472,11 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="mt-8 border-t border-border/40 pt-8 text-center text-sm text-muted-foreground">
-            <p>{siteConfig.footer.copyright}</p>
-          </div>
+          <a href="tel:+48572526380">
+            <div className="mt-8 border-t border-border/40 pt-8 pb-16 md:pb-0 text-center text-sm text-muted-foreground underline">
+              <p>{siteConfig.footer.copyright}</p>
+            </div>
+          </a>
         </div>
       </footer>
     </div>
