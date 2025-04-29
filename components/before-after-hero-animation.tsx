@@ -4,12 +4,6 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 
-const variants = {
-  enter: () => ({ opacity: 0 }),
-  center: { zIndex: 1, opacity: 1 },
-  exit: () => ({ zIndex: 0, opacity: 0 }),
-};
-
 const imagesCount = 8;
 
 export function BeforeAfterHeroAnimation() {
@@ -18,26 +12,31 @@ export function BeforeAfterHeroAnimation() {
   useEffect(() => {
     const interval = setInterval(() => {
       setImageIndex((prev) => (prev >= imagesCount ? 1 : prev + 1));
-    }, 3000);
+    }, 3000); // increased to give each image time to breathe
     return () => clearInterval(interval);
   }, []);
 
+  const fadeVariants = {
+    initial: { opacity: 0 },
+    animate: { opacity: 1 },
+    exit: { opacity: 0 },
+  };
+
+  const transition = { duration: 1.2, ease: 'easeInOut' };
+
   return (
     <div className="relative w-full h-full overflow-hidden">
-      <AnimatePresence initial={false} custom={1}>
+      <AnimatePresence mode="wait">
         <motion.div
           key={imageIndex}
-          custom={1}
-          variants={variants}
-          initial="enter"
-          animate="center"
+          variants={fadeVariants}
+          initial="initial"
+          animate="animate"
           exit="exit"
-          transition={{
-            opacity: { duration: 0.7 },
-          }}
-          className="absolute inset-0 w-full h-full flex items-center justify-center"
+          transition={transition}
+          className="absolute inset-0 w-full h-full flex"
         >
-          <div className="w-1/2 h-full relative">
+          <motion.div className="w-1/2 h-full relative">
             <Image
               src={`/images/compare/before${imageIndex}.webp`}
               alt="Before"
@@ -45,8 +44,8 @@ export function BeforeAfterHeroAnimation() {
               className="object-cover"
               priority={imageIndex === 1}
             />
-          </div>
-          <div className="w-1/2 h-full relative">
+          </motion.div>
+          <motion.div className="w-1/2 h-full relative">
             <Image
               src={`/images/compare/after${imageIndex}.webp`}
               alt="After"
@@ -54,7 +53,7 @@ export function BeforeAfterHeroAnimation() {
               className="object-cover"
               priority={imageIndex === 1}
             />
-          </div>
+          </motion.div>
         </motion.div>
       </AnimatePresence>
     </div>

@@ -10,6 +10,7 @@ import { Metadata } from "next"
 import PageLoader from "@/components/page-loader"
 import { BeforeAfterHeroAnimation } from "@/components/before-after-hero-animation"
 import { ButtonFixed } from "@/components/button-fixed"
+import { BeforeAfterHeroAnimationCopy } from "@/components/before-after-hero-animation copy"
 
 export const metadata: Metadata = {
   title: "Clean Strike - Profesjonalne czyszczenie kostki brukowej",
@@ -119,7 +120,7 @@ const siteConfig = {
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
-      <PageLoader />
+      {/* <PageLoader /> */}
       <ButtonFixed />
       {/* Nagłówek */}
       <header className="sticky top-0 z-40 border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
