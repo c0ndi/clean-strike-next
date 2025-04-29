@@ -390,9 +390,7 @@ export default function Home() {
           <div className="grid gap-8 md:grid-cols-4">
             <div className="space-y-4">
               <div className="flex items-center gap-2">
-                <div className="flex h-10 w-10 items-center justify-center rounded bg-primary/20">
-                  <Droplets className="h-6 w-6 text-primary" />
-                </div>
+                <Image src="/images/logo.png" alt="Logo Clean Strike" width={40} height={40} className="rounded-md" />
                 <span className="text-xl font-bold text-primary">{siteConfig.footer.logoText}</span>
               </div>
               <p className="text-sm text-muted-foreground">
