@@ -33,49 +33,11 @@ const beforeAfterData = [
     afterImage: "/images/compare/after1.webp",
   },
   {
-    id: 2,
-    title: "Taras",
-    description: "Renowacja tarasu z kostki brukowej",
-    beforeImage: "/images/compare/before2.webp",
-    afterImage: "/images/compare/after2.webp",
-  },
-  {
-    id: 3,
-    title: "Ścieżka ogrodowa",
-    description: "Czyszczenie ścieżki w ogrodzie",
-    beforeImage: "/images/compare/before3.webp",
-    afterImage: "/images/compare/after3.webp",
-  },
-  {
-    id: 4,
-    title: "Patio",
-    description: "Odświeżenie patio z kostki brukowej",
-    beforeImage: "/images/compare/before4.webp",
-    afterImage: "/images/compare/after4.webp",
-  },
-
-  {
     id: 5,
     title: "Ścieżka ogrodowa",
     description: "Czyszczenie ścieżki w ogrodzie",
     beforeImage: "/images/compare/before5.webp",
     afterImage: "/images/compare/after5.webp",
-  },
-
-  {
-    id: 6,
-    title: "Ścieżka ogrodowa",
-    description: "Czyszczenie ścieżki w ogrodzie",
-    beforeImage: "/images/compare/before6.webp",
-    afterImage: "/images/compare/after6.webp",
-  },
-
-  {
-    id: 7,
-    title: "Ścieżka ogrodowa",
-    description: "Czyszczenie ścieżki w ogrodzie",
-    beforeImage: "/images/compare/before7.webp",
-    afterImage: "/images/compare/after7.webp",
   },
 
   {
