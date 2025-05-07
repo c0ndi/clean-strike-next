@@ -428,7 +428,8 @@ export default function Home() {
               <h3 className="mb-4 text-sm font-semibold uppercase text-primary">{siteConfig.footer.socialMediaHeading}</h3>
               <div className="flex gap-4">
                 <Link
-                  href="#"
+                  href="https://www.facebook.com/CleanStrikePro"
+                  target="_blank"
                   className="flex h-10 w-10 items-center justify-center rounded-full bg-background/50 text-muted-foreground hover:bg-destructive/20 hover:text-destructive"
                 >
                   <svg
@@ -448,7 +449,8 @@ export default function Home() {
                   <span className="sr-only">{siteConfig.footer.facebookAlt}</span>
                 </Link>
                 <Link
-                  href="#"
+                  href="https://www.instagram.com/cleanstrike.pl/"
+                  target="_blank"
                   className="flex h-10 w-10 items-center justify-center rounded-full bg-background/50 text-muted-foreground hover:bg-destructive/20 hover:text-destructive"
                 >
                   <svg
