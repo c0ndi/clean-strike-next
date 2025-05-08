@@ -22,11 +22,11 @@ const beforeAndAfterHorizontalData = [
 ]
 const beforeAfterData = [
   {
-    id: 1,
+    id: 9,
     title: "Ścieżka ogrodowa",
     description: "Czyszczenie ścieżki w ogrodzie",
-    beforeImage: "/images/compare/before1.webp",
-    afterImage: "/images/compare/after1.webp",
+    beforeImage: "/images/compare/before9.webp",
+    afterImage: "/images/compare/after9.webp",
   },
   {
     id: 5,
