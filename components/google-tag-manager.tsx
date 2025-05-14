@@ -1,7 +1,7 @@
 // @ts-nocheck
 'use client'; // This directive is necessary for client-side components in App Router
 
-import { useEffect } from 'react';
+import { Suspense, useEffect } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 
 // Define your GTM ID
@@ -62,4 +62,10 @@ const GoogleTagManager = () => {
   );
 };
 
-export default GoogleTagManager;
+export default function Wrapper() {
+  return (
+    <Suspense>
+      <GoogleTagManager />
+    </Suspense>
+  )
+}
