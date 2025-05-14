@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Montserrat, Outfit, Pacifico } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
+import GoogleTagManager from "@/components/google-tag-manager"
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -28,6 +29,7 @@ export default function RootLayout({
   return (
     <html lang="pl" className="dark" suppressHydrationWarning>
       <body className={`${outfit.variable} ${montserrat.variable} font-sans antialiased`}>
+        <GoogleTagManager />
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
           {children}
         </ThemeProvider>
