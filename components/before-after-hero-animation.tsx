@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 
-const imagesCount = 8;
+const imagesCount = 10;
 
 export function BeforeAfterHeroAnimation() {
   const [imageIndex, setImageIndex] = useState(1);
