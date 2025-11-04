@@ -29,7 +29,6 @@ export default function RootLayout({
   return (
     <html lang="pl" className="dark" suppressHydrationWarning>
       <body className={`${outfit.variable} ${montserrat.variable} font-sans antialiased`}>
-        {/* <GoogleTagManager /> */}
         <GoogleTagManager gtmId="GTM-N8PNGZNZ" />
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
           {children}

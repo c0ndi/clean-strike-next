@@ -6,22 +6,19 @@ import logo from '@/public/images/logo.png';
 
 const PageLoader = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const [animationPhase, setAnimationPhase] = useState(1); // 1: grow, 2: shrink, 3: fade out
+  const [animationPhase, setAnimationPhase] = useState(1);
 
   useEffect(() => {
-    // Phase 1: Logo grows (default at start)
     const growTimer = setTimeout(() => {
-      setAnimationPhase(2); // Move to shrink phase
+      setAnimationPhase(2);
     }, 1000);
 
-    // Phase 2: Logo shrinks
     const shrinkTimer = setTimeout(() => {
-      setAnimationPhase(3); // Move to fade out phase
+      setAnimationPhase(3);
     }, 2000);
 
-    // Phase 3: Background fades out
     const fadeOutTimer = setTimeout(() => {
-      setIsLoading(false); // Component unmounts
+      setIsLoading(false);
     }, 3000);
 
     return () => {
@@ -31,19 +28,15 @@ const PageLoader = () => {
     };
   }, []);
 
-  // Logo variants for different animation phases
   const logoVariants = {
-    // Start small and transparent
     initial: { opacity: 0, scale: 0.8 },
 
-    // Phase 1: Grow to full size with full opacity
     grow: {
       opacity: 1,
       scale: 1,
       transition: { duration: 1, ease: "easeOut" }
     },
 
-    // Phase 2: Shrink back down with decreasing opacity
     shrink: {
       opacity: 0,
       scale: 0.8,
@@ -51,7 +44,6 @@ const PageLoader = () => {
     }
   };
 
-  // Background variants
   const backgroundVariants = {
     visible: { opacity: 1 },
     fadeOut: {

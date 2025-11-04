@@ -12,7 +12,7 @@ export function BeforeAfterHeroAnimation() {
   useEffect(() => {
     const interval = setInterval(() => {
       setImageIndex((prev) => (prev >= imagesCount ? 1 : prev + 1));
-    }, 3000); // increased to give each image time to breathe
+    }, 3000);
     return () => clearInterval(interval);
   }, []);
 

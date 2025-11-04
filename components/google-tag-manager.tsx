@@ -1,10 +1,9 @@
 // @ts-nocheck
-'use client'; // This directive is necessary for client-side components in App Router
+'use client';
 
 import { Suspense, useEffect } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 
-// Define your GTM ID
 const GTM_ID = 'GTM-N8PNGZNZ';
 
 const GoogleTagManager = () => {
@@ -12,10 +11,6 @@ const GoogleTagManager = () => {
   const searchParams = useSearchParams();
 
   useEffect(() => {
-    // This useEffect hook will run only on the client side
-    // It ensures the GTM script is added to the head after the component mounts
-
-    // Check if GTM script is already added to prevent duplicates
     if (document.getElementById('gtm-script')) {
       return;
     }
@@ -29,15 +24,13 @@ const GoogleTagManager = () => {
           'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
     })(window, document, 'script', 'dataLayer', GTM_ID);
 
-    // Add an ID to the script tag for easier checking in subsequent renders
     const gtmScript = document.querySelector(`script[src*="gtm.js?id=${GTM_ID}"]`);
     if (gtmScript) {
       gtmScript.id = 'gtm-script';
     }
 
-  }, []); // Empty dependency array means this effect runs once after initial render
+  }, []);
 
-  // You might want to trigger pageview events on route changes
   useEffect(() => {
     if (typeof window !== 'undefined' && window.dataLayer) {
       window.dataLayer.push({
@@ -45,7 +38,7 @@ const GoogleTagManager = () => {
         page_path: pathname + searchParams.toString(),
       });
     }
-  }, [pathname, searchParams]); // Re-run when pathname or searchParams change
+  }, [pathname, searchParams]);
 
   return (
     <>
