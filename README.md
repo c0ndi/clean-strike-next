@@ -1,30 +1,60 @@
-# Clean Strike website
+# Clean Strike - Poradnik Deploymentu na Vercel
 
-*Automatically synced with your [v0.dev](https://v0.dev) deployments*
+## Wymagania
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/c0ndis-projects/v0-clean-strike-website)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/0OZRH6YTTu8)
+- Konto na [Vercel](https://vercel.com) (darmowe)
+- Repozytorium tego projektu na GitHub/GitLab/Bitbucket
 
-## Overview
+## Krok po kroku
 
-This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
+### 1. Przygotuj repozytorium
 
-## Deployment
+Upewnij się, że kod jest w repozytorium Git:
 
-Your project is live at:
+```bash
+git add .
+git commit -m "Ready for deployment"
+git push origin main
+```
 
-**[https://vercel.com/c0ndis-projects/v0-clean-strike-website](https://vercel.com/c0ndis-projects/v0-clean-strike-website)**
+### 2. Zaloguj się do Vercel
 
-## Build your app
+Wejdź na [vercel.com](https://vercel.com) i zaloguj się swoim kontem GitHub/GitLab/Bitbucket.
 
-Continue building your app on:
+### 3. Import projektu
 
-**[https://v0.dev/chat/projects/0OZRH6YTTu8](https://v0.dev/chat/projects/0OZRH6YTTu8)**
+1. Kliknij **"Add New..."** → **"Project"**
+2. Wybierz repozytorium `clean-strike-next`
+3. Vercel automatycznie wykryje Next.js
 
-## How It Works
+### 4. Konfiguracja (opcjonalnie)
 
-1. Create and modify your project using [v0.dev](https://v0.dev)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+Możesz zostawić domyślne ustawienia:
+
+- **Framework Preset**: Next.js
+- **Root Directory**: ./
+- **Build Command**: `pnpm run build` (lub `npm run build`)
+- **Output Directory**: `.next`
+
+### 5. Deploy
+
+Kliknij **"Deploy"** i poczekaj kilka minut. Vercel automatycznie:
+
+- Zainstaluje zależności
+- Zbuduje aplikację
+- Wdroży ją na domenie
+
+### 6. Gotowe! 🎉
+
+Po zakończeniu otrzymasz link do swojej strony, np:
+`https://clean-strike-next.vercel.app`
+
+## Aktualizacje
+
+Każdy push do branch `main` automatycznie wdroży nową wersję strony.
+
+## Domena własna (opcjonalnie)
+
+1. W Vercel → **Settings** → **Domains**
+2. Dodaj swoją domenę
+3. Skonfiguruj DNS zgodnie z instrukcjami Vercel
